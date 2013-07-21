@@ -16,6 +16,10 @@ module.exports = function (grunt) {
       dist: {
           src: 'lib/<%= pkg.name %>.js',
           dest: 'dist/<%= pkg.name %>.min.js'
+      },
+      esprima: {
+          src: 'node_modules/esprima/esprima.js',
+          dest: 'dist/esprima-es6.min.js'
       }
     },
     jshint: {
@@ -32,5 +36,5 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify');
 
-  grunt.registerTask('default', [/*'jshint', */'uglify']);
+  grunt.registerTask('default', [/*'jshint', */'uglify:dist']);
 };
